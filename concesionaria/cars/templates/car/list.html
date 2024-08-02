@@ -1,0 +1,8 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+        {% for car in cars %}
+            <h3>{{car}}</h3>
+            <a href="{% url 'car_detail' car.id %}" class="btn btn-info btn-sm">Detalles</a>
+        {% endfor %}
+{% endblock %}
