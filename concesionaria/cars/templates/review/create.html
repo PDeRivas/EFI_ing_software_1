@@ -1,0 +1,15 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    <h1>Dejar Reseña</h1>
+    {{car}}
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Reseña</label>
+        {{ form.text }}
+        <label>Calificación</label>
+        {{ form.rating }}
+        <button type="submit" class="btn btn-primary">Publicar</button>
+    </form>
+{% endblock %}

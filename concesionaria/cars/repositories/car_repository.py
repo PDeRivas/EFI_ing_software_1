@@ -57,3 +57,6 @@ class CarsRepository:
             category = Category,
     ) -> List[Car]:
         return category.objects.filter(category = category)
+
+    def delete(self, car:Car):
+        car.delete()

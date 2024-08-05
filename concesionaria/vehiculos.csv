@@ -1,0 +1,101 @@
+Marca,Modelo,AniodeFabricacion,CantidaddePuertas,Cilindrada,TipodeCombustible,PaisdeFabricacion,Precioendolares,Usado,Kilometros,Categoria,Traccion,Transmision
+Toyota,Yaris,2007,4,2.0,Electric,Japan,56246,0,0,Couper,Total,Automatica
+BMW,X3,2006,4,1.4,Electric,South Korea,26706,1,18043,Convertible,Delantera,Hidraulica
+Honda,Civic,2003,2,3.0,Diesel,China,64551,1,67731,Convertible,4x4,Hidraulica
+BMW,X3,2006,2,3.5,Diesel,Japan,73608,1,13035,Convertible,Delantera,Secuencial
+Ford,Escape,2014,2,3.5,Hybrid,Brazil,27693,1,43697,Sedan,Total,Secuencial
+BMW,3 Series,2011,4,1.6,Hybrid,China,74280,1,65986,Pickup,4x4,Automatica
+Nissan,Rogue,2009,4,2.0,Gasoline,Germany,42632,1,63312,SUV,4x4,Automatica
+Kia,Sportage,2023,4,3.0,Hybrid,China,41437,0,0,Pickup,4x4,Manual
+Toyota,Yaris,2014,2,2.4,Gasoline,India,38943,1,38856,Couper,Delantera,Automatica
+Honda,CR-V,2009,2,4.0,Electric,South Korea,57661,0,0,Convertible,4x4,Hidraulica
+Ford,Explorer,2001,4,1.2,Gasoline,India,27829,1,73238,Sedan,Trasera,Secuencial
+Ford,F-150,2017,2,1.8,Hybrid,India,17142,0,0,Convertible,4x4,Hidraulica
+Toyota,Corolla,2009,4,1.8,Hybrid,Germany,13008,1,40613,Convertible,Trasera,Hidraulica
+Chevrolet,Silverado,2005,4,1.6,Gasoline,Mexico,56030,1,25545,SUV,Delantera,Hidraulica
+Nissan,Frontier,2019,4,3.0,Diesel,Germany,60940,0,0,Convertible,Delantera,Hidraulica
+Nissan,Frontier,2007,4,1.2,Gasoline,India,41637,1,36271,Sedan,Total,Hidraulica
+Kia,Optima,2017,2,1.4,Diesel,Brazil,37971,0,0,Sedan,4x4,Manual
+Mercedes-Benz,GLC,2009,4,2.0,Diesel,China,11912,1,76041,Pickup,Trasera,Manual
+Kia,Optima,2020,2,4.0,Hybrid,South Korea,62164,0,0,Sedan,Trasera,Secuencial
+Kia,Rio,2023,2,1.6,Hybrid,Brazil,75724,1,58351,Couper,4x4,Hidraulica
+Toyota,Prius,2019,4,1.8,Hybrid,Japan,17083,1,72067,Pickup,Trasera,Hidraulica
+Honda,Accord,2016,2,2.0,Diesel,South Korea,57527,1,38072,Pickup,Total,Hidraulica
+Toyota,Prius,2019,4,1.6,Hybrid,Germany,42632,1,15481,Convertible,4x4,Automatica
+BMW,3 Series,2009,4,1.0,Electric,China,13008,0,0,Pickup,Trasera,Manual
+Hyundai,Elantra,2003,2,3.5,Diesel,China,15875,1,79522,SUV,4x4,Hidraulica
+Honda,Fit,2012,4,3.5,Electric,India,73136,1,21472,SUV,Total,Automatica
+Hyundai,Sonata,2020,2,1.4,Hybrid,Brazil,51880,1,23861,Sedan,Trasera,Automatica
+Mercedes-Benz,C-Class,2010,4,3.5,Gasoline,India,56030,0,0,Convertible,4x4,Secuencial
+Chevrolet,Tahoe,2019,2,1.2,Diesel,China,58441,0,0,SUV,Trasera,Secuencial
+Ford,Escape,2019,2,1.2,Gasoline,Japan,12454,1,65775,Couper,Trasera,Manual
+BMW,5 Series,2023,4,1.6,Gasoline,USA,62164,1,73351,Sedan,Total,Manual
+Kia,Rio,2009,2,4.0,Hybrid,India,15875,0,0,Convertible,Delantera,Automatica
+Hyundai,Santa Fe,2016,2,1.8,Gasoline,India,15875,1,76812,SUV,4x4,Manual
+Nissan,Rogue,2011,4,2.4,Hybrid,South Korea,47207,0,0,Convertible,Delantera,Manual
+Hyundai,Sonata,2015,2,1.0,Hybrid,India,60940,0,0,Couper,Delantera,Secuencial
+Ford,F-150,2007,2,2.0,Gasoline,Germany,13702,1,52992,Convertible,Delantera,Hidraulica
+Mercedes-Benz,GLE,2012,4,1.2,Diesel,Mexico,37425,1,54359,SUV,Delantera,Hidraulica
+Kia,Sportage,2000,2,2.4,Gasoline,South Korea,58441,0,0,Pickup,Delantera,Manual
+Chevrolet,Equinox,2023,4,2.4,Hybrid,Germany,73488,0,0,Pickup,Total,Automatica
+Honda,CR-V,2000,4,2.2,Electric,Brazil,74280,1,39551,Sedan,4x4,Automatica
+Honda,CR-V,2009,2,2.0,Hybrid,South Korea,60940,0,0,Convertible,Delantera,Hidraulica
+Chevrolet,Silverado,2021,2,3.5,Electric,USA,54282,1,19861,Sedan,Total,Hidraulica
+Mercedes-Benz,C-Class,2012,4,1.4,Hybrid,India,12043,1,77512,Couper,Trasera,Automatica
+Ford,Escape,2013,4,3.5,Electric,Brazil,26922,1,75172,Pickup,4x4,Automatica
+Mercedes-Benz,E-Class,2000,2,1.4,Diesel,China,15875,1,58966,Pickup,Trasera,Hidraulica
+Hyundai,Elantra,2013,2,1.2,Electric,USA,31026,1,47293,Sedan,4x4,Automatica
+Kia,Sorento,2016,2,3.0,Electric,Germany,73136,1,45310,Convertible,4x4,Automatica
+Honda,Accord,2004,2,4.0,Diesel,Germany,38649,1,21373,Sedan,4x4,Hidraulica
+Honda,Civic,2008,2,4.0,Gasoline,Brazil,74280,1,21610,SUV,Delantera,Manual
+Ford,F-150,2003,2,1.2,Gasoline,India,51880,1,16354,SUV,Delantera,Hidraulica
+Nissan,Altima,2020,4,1.8,Gasoline,USA,17142,1,28233,Sedan,Delantera,Hidraulica
+Toyota,Corolla,2004,4,3.0,Diesel,Germany,14362,1,72896,Pickup,Trasera,Secuencial
+Kia,Optima,2014,2,2.2,Electric,Mexico,60940,0,0,Pickup,Delantera,Automatica
+Hyundai,Santa Fe,2019,4,1.4,Electric,Germany,33774,1,41046,SUV,4x4,Manual
+Kia,Sorento,2015,4,1.6,Hybrid,Germany,47207,1,59516,SUV,Total,Secuencial
+Ford,Mustang,2010,4,3.5,Electric,South Korea,27829,0,0,Pickup,Trasera,Manual
+Honda,CR-V,2004,4,4.0,Hybrid,Japan,73488,1,71400,Pickup,Total,Automatica
+Volkswagen,Golf,2018,4,1.8,Diesel,USA,29273,1,29802,Convertible,Total,Secuencial
+Toyota,Corolla,2001,4,2.0,Hybrid,Brazil,12454,1,11371,Convertible,Delantera,Manual
+Kia,Sportage,2019,2,3.5,Gasoline,India,72927,1,51163,Couper,4x4,Manual
+Volkswagen,Tiguan,2018,2,2.0,Diesel,Japan,57943,0,0,Couper,4x4,Secuencial
+Mercedes-Benz,C-Class,2017,2,3.0,Electric,Brazil,17142,0,0,Pickup,4x4,Manual
+Volkswagen,Golf,2008,4,2.0,Diesel,South Korea,63586,1,68306,SUV,Trasera,Manual
+Toyota,Camry,2012,2,3.0,Electric,India,17083,0,0,Pickup,Trasera,Automatica
+Hyundai,Elantra,2019,4,1.2,Diesel,USA,38649,1,48641,SUV,Delantera,Secuencial
+Mercedes-Benz,E-Class,2015,4,1.8,Gasoline,China,13702,1,30781,Sedan,Trasera,Manual
+Mercedes-Benz,GLC,2023,2,1.2,Electric,China,22800,0,0,Convertible,Delantera,Hidraulica
+Hyundai,Tucson,2019,2,3.5,Diesel,South Korea,12454,1,21501,Couper,Total,Manual
+Ford,Mustang,2019,4,1.4,Gasoline,India,23901,0,0,Pickup,Trasera,Manual
+Ford,Escape,2019,2,3.0,Diesel,Brazil,53478,1,78861,Convertible,Total,Manual
+Ford,Mustang,2013,4,1.4,Electric,Japan,33774,0,0,Couper,Total,Automatica
+Nissan,Sentra,2000,4,2.0,Electric,USA,56030,0,0,Pickup,Trasera,Secuencial
+Chevrolet,Tahoe,2004,4,3.5,Diesel,USA,42632,0,0,SUV,Trasera,Automatica
+Volkswagen,Golf,2009,2,2.0,Diesel,Mexico,60940,0,0,Pickup,Delantera,Manual
+Mercedes-Benz,E-Class,2013,2,2.0,Electric,USA,49148,1,33047,SUV,4x4,Automatica
+Hyundai,Sonata,2004,2,1.4,Gasoline,Brazil,60940,1,39257,Pickup,Delantera,Manual
+Hyundai,Tucson,2013,2,3.0,Electric,Germany,77190,1,24302,SUV,Trasera,Automatica
+Honda,Fit,2021,4,1.6,Electric,India,46438,1,31297,Sedan,4x4,Hidraulica
+BMW,3 Series,2011,4,2.0,Hybrid,Brazil,12832,0,0,Pickup,Trasera,Secuencial
+Honda,Civic,2000,4,1.6,Electric,Mexico,61571,1,52586,Couper,Total,Automatica
+Toyota,Prius,2021,2,2.0,Diesel,Brazil,13589,1,11493,SUV,Delantera,Manual
+Hyundai,Sonata,2016,4,1.8,Electric,China,13008,0,0,Pickup,4x4,Automatica
+Volkswagen,Golf,2018,4,3.0,Gasoline,Germany,37833,0,0,Pickup,Delantera,Hidraulica
+Chevrolet,Malibu,2007,2,3.0,Gasoline,South Korea,34808,0,0,Sedan,Trasera,Manual
+Kia,Rio,2017,2,4.0,Gasoline,Brazil,12699,1,67034,SUV,Total,Hidraulica
+BMW,5 Series,2019,4,1.8,Gasoline,Japan,40730,0,0,Convertible,Total,Secuencial
+Hyundai,Sonata,2014,2,1.4,Hybrid,India,75724,0,0,Pickup,Total,Hidraulica
+Volkswagen,Jetta,2014,2,2.2,Gasoline,Japan,72201,0,0,Couper,Total,Hidraulica
+Nissan,Altima,2019,4,1.6,Diesel,South Korea,68016,0,0,SUV,Trasera,Manual
+Honda,Accord,2017,2,1.2,Electric,South Korea,17142,1,19313,Sedan,4x4,Manual
+Toyota,Camry,2003,2,3.0,Hybrid,USA,24293,0,0,Couper,Trasera,Secuencial
+Nissan,Sentra,2014,2,2.0,Diesel,Japan,44573,0,0,Convertible,Total,Manual
+Toyota,Prius,2005,2,2.4,Hybrid,Brazil,22339,1,47432,Sedan,Delantera,Manual
+Volkswagen,Jetta,2014,4,4.0,Gasoline,Japan,46438,1,68977,Couper,Total,Secuencial
+Honda,Civic,2008,4,1.0,Hybrid,Mexico,60940,1,58536,Convertible,4x4,Manual
+Toyota,Prius,2009,2,2.2,Electric,Japan,41637,1,73782,Pickup,Delantera,Manual
+Chevrolet,Tahoe,2001,4,1.4,Gasoline,Germany,59182,0,0,Sedan,Total,Manual
+Hyundai,Tucson,2023,4,1.6,Hybrid,India,36152,1,57011,Pickup,Total,Manual
+Honda,Fit,2015,2,1.4,Electric,USA,26706,1,51517,Convertible,Trasera,Manual
+Toyota,Prius,2017,4,1.8,Diesel,Japan,63586,1,72324,SUV,Delantera,Secuencial
