@@ -2,6 +2,10 @@
 
 {% block content %}
     {{car}}
+    <img src="{{car.thumbnail.url}}" alt="">
+    {% for image in car_images %}
+        <img src="{{image.image.url}}" alt="">
+    {% endfor %}
     <h3>Comentarios</h3>
     <form method="post">
         {% csrf_token %}

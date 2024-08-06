@@ -123,7 +123,7 @@ class Car(models.Model):
         related_name='transmision',
         verbose_name='Transmisión',
     )
-    thumbnail = models.ImageField(upload_to='thumbnails/', null=True)
+    thumbnail = models.ImageField(upload_to='thumbnails/', null=True, verbose_name='thumbnail')
 
     def __str__(self):
         return f'{self.brand.name} {self.nameplate.name} {self.year}'

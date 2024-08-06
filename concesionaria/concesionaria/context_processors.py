@@ -1,6 +1,6 @@
 from django.core.cache import cache
 from django.db.models.functions import Concat
-from cars.models import Car
+from cars.models import Car, CarImage
 
 def all_car_names(request):
     car_names = cache.get('car_names')

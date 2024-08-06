@@ -3,6 +3,7 @@
 {% block content %}
         {% for car in car_names %}
             <h3>{{car}}</h3>
+            <img src="{{ car.thumbnail.url }}" alt="IMAGEN DEL AUTO">
             <a href="{% url 'car_detail' car.id %}" class="btn btn-info btn-sm">Detalles</a>
         {% endfor %}
 {% endblock %}

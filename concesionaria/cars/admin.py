@@ -12,6 +12,7 @@ from cars.models import(
     Nameplate,
     Traction,
     Transmission,
+    CarImage,
 )
 
 @admin.register(Brand)
@@ -42,6 +43,13 @@ class Traction(admin.ModelAdmin):
 class Transmission(admin.ModelAdmin):
     list_display = ('name',)
 
+@admin.register(CarImage)
+class CarAdmin(admin.ModelAdmin):
+    list_display = ('car',
+                    'image',
+                    'description',
+                    )
+
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
     list_display = ('brand',
@@ -52,5 +60,3 @@ class CarAdmin(admin.ModelAdmin):
                     'traction',
                     'transmission',
                     )
-    
-    

@@ -1,6 +1,11 @@
 import csv
 
 from django.core.management.base import BaseCommand, CommandParser
+from django.core.files import File
+
+from os import listdir
+
+from random import choice
 
 from cars.models import(
     Car,
@@ -14,7 +19,7 @@ from cars.models import(
 )
 
 class Command(BaseCommand):
-    help = "Cargar autos desde un archivo .csv. Se necesitan los siguientes datos: Marca \n Modelo \n AniodeFabricacion \n CantidaddePuertas \n Cilindrada \n TipodeCombustible \n PaisdeFabricacion \n Precioendolares \n Usado \n Kilometros \n Categoria \n Traccion \n Transmision"
+    help = "Cargar autos desde un archivo .csv. Se le asignaran thumbnail aleatoros sacados de la carpeta cars_images y le necesitan los siguientes datos: Marca \n Modelo \n AniodeFabricacion \n CantidaddePuertas \n Cilindrada \n TipodeCombustible \n PaisdeFabricacion \n Precioendolares \n Usado \n Kilometros \n Categoria \n Traccion \n Transmision"
     
     def add_arguments(self, parser: CommandParser) -> None:
         parser.add_argument(
@@ -29,6 +34,8 @@ class Command(BaseCommand):
         
         with open(csv_file, newline='') as file:
             reader = csv.DictReader(file)
+            car_images_path = "cars_images/"
+            images_list = listdir(car_images_path)
             for row in reader:
                 brand_name = row['Marca']
                 brand = Brand.objects.get_or_create(name=brand_name)[0]
@@ -50,6 +57,8 @@ class Command(BaseCommand):
                 price = row['Precioendolares']
                 used = row['Usado']
                 km = row['Kilometros']
+                image = choice(images_list)
+                thumbnail = File(open(f'cars_images/{image}', 'rb'))
                 Car.objects.create(year=year,
                                    doors=doors,
                                    cylinders=cylinders,
@@ -62,6 +71,7 @@ class Command(BaseCommand):
                                    fuel=fuel,
                                    nameplate=nameplate,
                                    traction=traction,
-                                   transmission=transmission)
+                                   transmission=transmission,
+                                   thumbnail=thumbnail,)
 
         self.stdout.write(self.style.WARNING('Finalizada la carga'))
