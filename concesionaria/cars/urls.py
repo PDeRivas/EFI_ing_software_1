@@ -2,6 +2,7 @@ from django.urls import path
 from django.contrib.auth.decorators import login_required
 from cars.views.car_views import (
     CarView,
+    CarFilter,
     CarDetail,
     )
 
@@ -17,6 +18,7 @@ from cars.views.reivew_views import(
 
 urlpatterns = [
     path(route='', view=CarView.as_view(), name='car_list'),
+    path(route='<int:price_gte>/<int:price_lte>/<int:brand_id>/<int:used>/<int:category_id>/<int:year_gte>/<int:year_lte>/list/', view=CarFilter.as_view(), name='car_filter'),
     path(route='<int:id>/detail/', view=CarDetail.as_view(), name='car_detail'),
     path(route='comment/<int:id>/update/', view=CommentUpdate.as_view(), name='comment_update'),
     path(route='comment/<int:id>/delete/', view=CommentDelete.as_view(), name='comment_delete'),

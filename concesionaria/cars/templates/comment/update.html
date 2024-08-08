@@ -6,7 +6,7 @@
 
     <form method="post">
         {% csrf_token %}
-        <textarea name="text" id="" placeholder="Deja tu comentario">{{text}}</textarea>
+        {{form.text}}
         <button class='btn btn-success'>Editar Comentario</button>
     </form>
 {% endblock %}

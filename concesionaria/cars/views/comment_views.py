@@ -2,6 +2,7 @@ from django.views import View
 from django.shortcuts import render, redirect
 from cars.repositories.car_repository import CarsRepository
 from cars.repositories.comment_repository import CommentsRepository
+from cars.forms import CommentForm
 
 class CommentUpdate(View):
     def get(self, request, id):
@@ -10,13 +11,14 @@ class CommentUpdate(View):
         if comment.author == request.user:
             car = comment.car
             text = comment.text
-
+            form = CommentForm()
             return render(
                 request,
                 'comment/update.html',
                 {
                     'car': car,
                     'text': text,
+                    'form': form,
                 }
             )
         else:

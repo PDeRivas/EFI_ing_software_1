@@ -1,27 +1,116 @@
 {% extends "home/base.html" %}
 
 {% block content %}
-    {{car}}
-    <img src="{{car.thumbnail.url}}" alt="">
-    {% for image in car_images %}
-        <img src="{{image.image.url}}" alt="">
-    {% endfor %}
-    <h3>Comentarios</h3>
-    <form method="post">
-        {% csrf_token %}
-        <textarea name="text" placeholder="Deja tu comentario"></textarea>
-        <button class='btn btn-success' name="comment">Commentar</button>
-    </form>
-    {% for comment in comments %}
-        <h4>{{comment.author}} dice:</h4>
-        <p>{{comment.text}}</p>
-        {% if comment.author == user%}
-            <a class='btn btn-success' href="{% url 'comment_update' comment.id %}">Editar Comentario</a>
-        {% endif %}
-        {% if comment.author == user or user.is_staff %}
-            <a class='btn btn-danger' href="{% url 'comment_delete' comment.id %}">Borrar Comentario</a>
-        {% endif %}
-    {% endfor %}
+    <h2>{{car}}</h2>
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{car.thumbnail.url}}" class="d-block w-100" alt="...">
+            </div>
+            {% for image in car_images %}
+                <div class="carousel-item">
+                    <img src="{{image.image.url}}" class="d-block w-100" alt="">
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div>
+        <div class="container text-center">
+            <h3>Detalles</h3>
+            <div class="row">
+                <div class='col'>
+                    <h4>Año</h4>
+                    <p>{{car.year}}</p>
+                </div>
+                <div class='col'>
+                    <h4>Cantidad de Puertas</h4>
+                    <p>{{car.doors}}</p>
+                </div>
+                <div class='col'>
+                    <h4>Estado</h4>
+                    {% if car.used %} 
+                        <p>Usado</p>
+                    {% else %}
+                        <p>Nuevo</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                {% if car.used %}
+                    <div class="col">
+                        <h4>Distancia recorrida</h4>
+                        <p>{{car.km}} Kilometros</p>
+                    </div>
+                {% endif %}
+                <div class="col">
+                    <h4>Cilindrado</h4>
+                    <p>{{car.cylinders}}</p>
+                </div>
+                <div class="col">
+                    <h4>Precio</h4>
+                    <p>${{car.price}} Dolares</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>País de Origen</h4>
+                    <p>{{car.country}}</p>
+                </div>
+                <div class="col">
+                    <h4>Marca</h4>
+                    <p>{{car.brand}}</p>
+                </div>
+                <div class="col">
+                    <h4>Modelo</h4>
+                    <p>{{car.nameplate}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Tipo de Auto</h4>
+                    <p>{{car.category}}</p>
+                </div>
+                <div class="col">
+                    <h4>Tipo de Combustible</h4>
+                    <p>{{car.fuel}}</p>
+                </div>
+                <div class="col">
+                    <h4>Tipo de Tracción</h4>
+                    <p>{{car.traction}}</p>
+                </div>
+            </div>
+            <div class="col">
+                <h4>Tipo de Transmisión</h4>
+                <p>{{car.transmission}}</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>Comentarios</h3>
+        <form class="d-flex" method="post">
+            {% csrf_token %}
+            {{ form.text }}
+            <button class='btn btn-success' name="comment">Commentar</button>
+        </form>
+        {% for comment in comments %}
+            <h4>{{comment.author}} dice:</h4>
+            <p>{{comment.text}}</p>
+            {% if comment.author == user%}
+                <a class='btn btn-success' href="{% url 'comment_update' comment.id %}">Editar Comentario</a>
+            {% endif %}
+            {% if comment.author == user or user.is_staff %}
+                <a class='btn btn-danger' href="{% url 'comment_delete' comment.id %}">Borrar Comentario</a>
+            {% endif %}
+        {% endfor %}
+    </div>
     <h3>Reseñas</h3>
     {% for review in reviews %}
         <h4>{{review.author}} dice:</h4>

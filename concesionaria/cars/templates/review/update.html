@@ -2,8 +2,8 @@
 
 {% block content %}
     <h1>Editar Reseña</h1>
-    {{car}}
-
+    <h3>{{car}}</h3>
+    <img src="{{car.thumbnail.url}}" alt="">
     <form method="post">
         {% csrf_token %}
         <label>Reseña</label>

@@ -27,7 +27,7 @@ class CarsRepository:
                doors: int,
                used: bool,
                km: int,
-               ) -> Car.objects:
+               ) -> Car:
         
         return Car.objects.create(
             brand = brand,
@@ -51,7 +51,40 @@ class CarsRepository:
         except:
             product = None
         return product
+
+    def get_brand(self, id:int) -> Brand:
+        return Brand.objects.get(id=id)
     
+    def get_category(self, id:int) -> Category:
+        return Category.objects.get(id=id)
+
+    def filter_many(self,
+                    price_gte: int,
+                    price_lte: int,
+                    brand_id: int,
+                    used: int,
+                    category_id: int,
+                    year_gte: int,
+                    year_lte: int,) -> List[Car]:
+        listado = Car.objects.all()
+        if price_gte != 0:
+            listado = listado.filter(price__gte=price_gte)
+        if price_lte != 0:
+            listado = listado.filter(price__lte=price_lte)
+        if brand_id != 0:
+            brand = self.get_brand(brand_id)
+            listado = listado.filter(brand=brand)
+        if used != 2:
+            listado = listado.filter(used=used)
+        if category_id != 0:
+            category = self.get_category(category_id)
+            listado = listado.filter(category=category)
+        if year_gte != 0:
+            listado = listado.filter(year__gte=year_gte)
+        if year_lte != 0:
+            listado = listado.filter(year__lte=year_lte)
+        return listado
+
     def filter_by_category(
             self,
             category = Category,

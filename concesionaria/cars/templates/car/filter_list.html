@@ -34,14 +34,14 @@
             </div>
         </div>
     </form>
-    <div class="row row-cols-1 row-cols-md-3 ">
-        {% for car in car_names %}
+    <div class="row row-cols-1 row-cols-md-3 ">  
+        {% for car in cars %}
             <div class="col mb-4 ">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ car.thumbnail.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{car}}</h5>
-                        <p>${{ car.price }}</p>
+                        <p>${{car.price}}</p>
                         {% if car.used %} 
                             <p class="card-text">Usado</p>
                         {% else %}
