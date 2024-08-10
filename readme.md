@@ -39,6 +39,10 @@ Tambien podemos usar el comando borrar_autos ``` python manage.py borrar_autos `
 2. Usuario no staff: Puede dejar comentarios y reseñas. Tambien puede editarlos y borrarlos siempre y cuando sea el creador. Para crear uno debemos entrar a iniciar sesión en la navbar del sitio y hacer click en "¿No tenes cuenta? Registrate aqui"
 3. Usuario staff: Puede cargar autos, imagenes, marcas, etc desde la sección para administradores [127.0.0.1:8000/admin](http://127.0.0.1:8000/admin). Tambien puede borrar comentarios y reseñas de otros usuarios. Para crear un usuario staff debemos correr el comando ``` python manage.py createsuperuser ``` por consola y llenar los campos que nos solicita.
 
+## Admin
+
+Entrando a ``` 127.0.0.1:8000/admin ``` tendremos acceso a las opciones para agregar nuevos autos, marcas, paises, imagenes de autos entre otras cosas.
+
 ## Modelos
 
 El principal modelo es el de Auto (Car), y tambien tenemos tambien sus clases foraneas: Marca, Categoría, País, Tipo de Combustible, Modelo, Tipo de tracción y de Transmisión.
