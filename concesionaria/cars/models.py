@@ -149,6 +149,7 @@ class CarImage(models.Model):
             verbose_name = "Imagen"
             verbose_name_plural = "Imagenes"
 
+#Pueden dejarse cualquier cantidad de comentarios sobre un auto
 class Comment(models.Model):
     car = models.ForeignKey(
         Car,
@@ -158,10 +159,14 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
     date = models.DateField(auto_now_add=True)
+    time = models.TimeField(auto_now_add=True, null=True)
+    date_edit = models.DateField(null=True)
+    time_edit = models.TimeField(null=True)
 
     def __str__(self):
         return f'Comentario de {self.author.username} sobre {self.car}'
 
+#Solo puede dejarse una reseña por auto por usuario y debe dejarse una calificación del 1 al 10 sobre este
 class Review(models.Model):
     car = models.ForeignKey(
         Car,
@@ -171,7 +176,29 @@ class Review(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
     date = models.DateField(auto_now_add=True)
+    time = models.TimeField(auto_now_add=True, null=True)
+    date_edit = models.DateField(null=True)
+    time_edit = models.TimeField(null=True)
     rating = models.IntegerField()
 
     def __str__(self):
         return f'review de {self.author.username} sobre {self.car}. Rating de: {self.rating}'
+
+class Sale(models.Model):
+    car = models.ForeignKey(
+        Car,
+        on_delete=models.CASCADE,
+        related_name='venta',
+    )
+    buyer = models.ForeignKey(User, on_delete=models.CASCADE)
+    credit_card_number = models.IntegerField()
+    country = models.ForeignKey(
+        Country,
+        on_delete=models.CASCADE,
+        related_name='pais_comprador'
+    )
+    city = models.CharField(max_length=100)
+    postal_code = models.IntegerField()
+    phone = models.IntegerField()
+    date = models.DateField(auto_now_add=True)
+    time = models.TimeField(auto_now_add=True, null=True)

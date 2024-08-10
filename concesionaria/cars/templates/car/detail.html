@@ -101,24 +101,36 @@
             <button class='btn btn-success' name="comment">Commentar</button>
         </form>
         {% for comment in comments %}
-            <h4>{{comment.author}} dice:</h4>
-            <p>{{comment.text}}</p>
-            {% if comment.author == user%}
-                <a class='btn btn-success' href="{% url 'comment_update' comment.id %}">Editar Comentario</a>
-            {% endif %}
-            {% if comment.author == user or user.is_staff %}
-                <a class='btn btn-danger' href="{% url 'comment_delete' comment.id %}">Borrar Comentario</a>
-            {% endif %}
+            <div class="border border-dark mt-2 p-2 rounded">
+                <h4>{{comment.author}}</h4>
+                <p>{{comment.text}}</p>
+                <p>{{comment.date}} {{comment.time}}</p>
+                {% if comment.date_edit != None %}
+                    <p>Editado: {{comment.time_edit}} {{comment.date_edit}}</p>
+                {% endif %}
+                {% if comment.author == user%}
+                    <a class='btn btn-success' href="{% url 'comment_update' comment.id %}">Editar Comentario</a>
+                {% endif %}
+                {% if comment.author == user or user.is_staff %}
+                    <a class='btn btn-danger' href="{% url 'comment_delete' comment.id %}">Borrar Comentario</a>
+                {% endif %}
+            </div>
         {% endfor %}
     </div>
     <h3>Reseñas</h3>
     {% for review in reviews %}
-        <h4>{{review.author}} dice:</h4>
-        <p>{{review.text}}</p>
-        <p>{{review.rating}}/10</p>
-        {% if review.author == user %}
-            <a class='btn btn-success' href="{% url 'review_update' review.id %}">Editar reseña</a>
-        {% endif %}
+        <div class="border border-dark mt-2 p-2 rounded">
+            <h4>{{review.author}}</h4>
+            <p>{{review.text}}</p>
+            <p>{{review.rating}}/10</p>
+            <p>{{review.time}} {{review.date}}</p>
+            {% if review.date_edit != None %}
+                <p>Editado: {{review.time_edit}} {{review.date_edit}}</p>
+            {% endif %}
+            {% if review.author == user %}
+                <a class='btn btn-success' href="{% url 'review_update' review.id %}">Editar reseña</a>
+            {% endif %}
+        </div>
     {% endfor %}
-    <a class='btn btn-success' href="{% url 'review_create' car.id %}">Deja tu reseña</a>
+    <a class='btn btn-success my-4' href="{% url 'review_create' car.id %}">Deja tu reseña</a>
 {% endblock %}

@@ -15,7 +15,7 @@ class CommentsRepository:
                car: Car,
                author: User,
                text: str,
-               ) -> Comment.objects:
+               ) -> Comment:
         
         return Comment.objects.create(
             car = car,
@@ -23,8 +23,14 @@ class CommentsRepository:
             text = text,
         )
     
-    def update(self, comment: Comment, text: str):
+    def update(self,
+                comment: Comment,
+                text: str,
+                date,
+                time):
         comment.text = text
+        comment.date_edit = date
+        comment.time_edit = time
         comment.save()
 
     def delete(self, comment: Comment):

@@ -1,6 +1,7 @@
+from datetime import datetime
+
 from django.views import View
 from django.shortcuts import render, redirect
-from cars.repositories.car_repository import CarsRepository
 from cars.repositories.comment_repository import CommentsRepository
 from cars.forms import CommentForm
 
@@ -28,7 +29,9 @@ class CommentUpdate(View):
         comment_repo = CommentsRepository()
         comment = comment_repo.get_by_id(id=id)
         text = request.POST.get('text')
-        comment_repo.update(comment=comment, text=text)
+        date = datetime.now().date()
+        time = datetime.now().time()
+        comment_repo.update(comment=comment, text=text, date=date, time=time)
         car = comment.car
 
         return redirect('car_detail', car.id)

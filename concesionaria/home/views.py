@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import (
     authenticate,
     login,
     logout)
-from users.forms import UserRegisterForm
+from users.forms import UserLoginForm, UserRegisterForm
 
 class IndexView(View):
     def get(self, request):
@@ -17,9 +16,13 @@ class IndexView(View):
 class LoginView(View):
     def get(self, request):
         if not request.user.is_authenticated:
+            form = UserLoginForm()
             return render(
                 request,
-                'home/login.html'
+                'home/login.html',
+                {
+                    'form': form,
+                }
             )
         else:
             return redirect('/')

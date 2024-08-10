@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.views import View
 from django.shortcuts import render, redirect
 
@@ -64,8 +66,10 @@ class ReviewUpdate(View):
         if review.author == request.user:
             text = request.POST.get('text')
             rating = request.POST.get('rating')
+            date = datetime.now().date()
+            time = datetime.now().time()
 
-            review_repo.update(review=review,text=text, rating=rating)
+            review_repo.update(review=review,text=text, rating=rating, date=date, time=time)
         
         return redirect('car_detail', review.car.id)
     

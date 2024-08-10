@@ -16,7 +16,7 @@ class ReviewsRepository:
                author: User,
                text: str,
                rating: int,
-               ) -> Review.objects:
+               ) -> Review:
         return Review.objects.create(
             car = car,
             author = author,
@@ -25,11 +25,15 @@ class ReviewsRepository:
         )
     
     def update(self,
-               review: Review,
-               text: str,
-               rating: int):
+                review: Review,
+                text: str,
+                rating: int,
+                date,
+                time,):
         review.text = text
         review.rating = rating
+        review.date_edit = date
+        review.time_edit = time
         review.save()
 
     def delete(self, review: Review):
