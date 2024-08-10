@@ -1,5 +1,5 @@
 from django import forms
-from cars.models import Comment, Review, Car
+from cars.models import Comment, Review, Car, Sale
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from cars.models import Brand, Category
@@ -48,3 +48,21 @@ class FilterForm(forms.Form):
     year_gte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Año Desde'}))
     year_lte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Año Hasta'}))
 
+class SaleForm(forms.ModelForm):
+    class Meta:
+        model = Sale
+        fields = [
+            'credit_card_number',
+            'country',
+            'city',
+            'postal_code',
+            'phone',
+        ]
+
+        widgets = {
+            'credit_card_number': forms.NumberInput(attrs={'step':'1', 'class':'form-control'}),
+            'country': forms.Select(attrs={'class':'form-control'}),
+            'city': forms.TextInput(attrs={'class':'form-control'}),
+            'postal_code': forms.NumberInput(attrs={'step':'1', 'class':'form-control'}),
+            'phone': forms.NumberInput(attrs={'step':'1', 'class':'form-control'}),
+        }

@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
     'cars',
     'home',
-    'products',
 ]
 
 MIDDLEWARE = [

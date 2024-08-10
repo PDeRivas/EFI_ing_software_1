@@ -28,19 +28,17 @@ class ReviewCreate(View):
             return redirect('car_detail', id)
 
     def post(self, request, id):
-        if request.user.is_authenticated:
-            car_repo = CarsRepository()
-            review_repo = ReviewsRepository()
+        car_repo = CarsRepository()
+        review_repo = ReviewsRepository()
 
-            car = car_repo.get_by_id(id=id)
-            author = request.user
-            text = request.POST.get('text')
-            rating = request.POST.get('rating')
+        car = car_repo.get_by_id(id=id)
+        author = request.user
+        text = request.POST.get('text')
+        rating = request.POST.get('rating')
 
-            review_repo.create(car=car, author=author, text=text, rating=rating)
-            return redirect('car_detail', id)
+        review_repo.create(car=car, author=author, text=text, rating=rating)
+        return redirect('car_detail', id)
         
-        return redirect('login')
     
 class ReviewUpdate(View):
     def get(self, request, id):

@@ -1,0 +1,23 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    <h1>Compra de Auto</h1>
+    <h3>{{car}}</h3>
+    <img src="{{car.thumbnail.url}}" alt="">
+    <form method="post">
+        {% csrf_token %}
+        <label>Tarjeta</label>
+        {{ form.credit_card_number }}
+        <label>Pais</label>
+        {{ form.country }}
+        <label>Ciudad</label>
+        {{ form.city }}
+        <label>Código Postal</label>
+        {{ form.postal_code }}
+        <label>Telefono</label>
+        {{ form.phone }}
+        <h3>Total a Pagar</h3>
+        <p>${{car.price}}</p>
+        <button type="submit" class="btn btn-primary">Comprar</button>
+    </form>
+{% endblock %}

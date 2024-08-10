@@ -30,27 +30,29 @@
                 {{ form.year_lte }}
             </div>
             <div class="col">
-                <button type="submit" class="btn btn-primary">Buscar</button>
+                <button type="submit" class="btn btn-primary">Filtrar</button>
             </div>
         </div>
     </form>
     <div class="row row-cols-1 row-cols-md-3 ">  
         {% for car in cars %}
-            <div class="col mb-4 ">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ car.thumbnail.url }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{car}}</h5>
-                        <p>${{car.price}}</p>
-                        {% if car.used %} 
-                            <p class="card-text">Usado</p>
-                        {% else %}
-                            <p class="card-text">Nuevo</p>
-                        {% endif %}
-                        <a href="{% url 'car_detail' car.id %}" class="btn btn-info btn-sm">Detalles</a>
+            {% if not car.sold %}
+                <div class="col mb-4 ">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ car.thumbnail.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{car}}</h5>
+                            <p>${{car.price}}</p>
+                            {% if car.used %} 
+                                <p class="card-text">Usado</p>
+                            {% else %}
+                                <p class="card-text">Nuevo</p>
+                            {% endif %}
+                            <a href="{% url 'car_detail' car.id %}" class="btn btn-info btn-sm">Detalles</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}

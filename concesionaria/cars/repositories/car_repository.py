@@ -83,6 +83,7 @@ class CarsRepository:
             listado = listado.filter(year__gte=year_gte)
         if year_lte != 0:
             listado = listado.filter(year__lte=year_lte)
+        listado = listado.filter(sold=False)
         return listado
 
     def filter_by_category(

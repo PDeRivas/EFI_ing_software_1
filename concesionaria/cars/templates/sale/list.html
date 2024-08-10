@@ -1,0 +1,35 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    <h1>Ventas Realizadas</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Auto</th>
+                <th>Comprador</th>
+                <th>Tarjeta</th>
+                <th>Pais</th>
+                <th>Ciudad</th>
+                <th>Código Postal</th>
+                <th>Telefono</th>
+                <th>E-Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sale in sales %}
+            <tr>
+                <td>{{ sale.date }} {{ sale.time }}</td>
+                <td>{{ sale.car }}</td>
+                <td>{{ sale.buyer.first_name }} {{ sale.buyer.last_name }}</td>
+                <td>{{ sale.credit_card_number }}</td>
+                <td>{{ sale.country }}</td>
+                <td>{{ sale.city }}</td>
+                <td>{{ sale.postal_code }}</td>
+                <td>{{ sale.phone }}</td>
+                <td>{{ sale.buyer.email }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
