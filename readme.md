@@ -12,7 +12,7 @@ Lucero, Matias Javier
 
 ## Descripción del Proyecto
 
-Sistema web para una concesionaria desarrollado con Django. Cuenta con sección de listado, busqueda y detalles de autos.
+Sistema web para una concesionaria desarrollado con Django. Cuenta con sección de listado, busqueda, detalles y ventas de autos.
 
 ## Instalación
 
@@ -23,8 +23,9 @@ Sistema web para una concesionaria desarrollado con Django. Cuenta con sección 
 ## Correr la aplicación
 
 1. Cuando nos encontremos en la carpeta principal del proyecto entraremos al directorio concesionaria ``` cd concesionaria ```
-2. Iniciaremos el proyecto ``` python manage.py runserver ```
-3. Ir al navegador y entrar a [127.0.0.1:8000](http://127.0.0.1:8000/)
+2. Correremos las migraciones ``` python manage.py makemigrations ``` ``` python manage.py migrate ```
+3. Iniciaremos el proyecto ``` python manage.py runserver ```
+4. Ir al navegador y entrar a [127.0.0.1:8000](http://127.0.0.1:8000/)
 
 ## Comandos
 
@@ -48,9 +49,15 @@ Comment: Comentarios que pueden realizarse sobre los autos. Pueden ingresarse cu
 
 Review: Solo habrá una reseña por usuario. Aqui debe ingresarse un texto y una puntuación que ira del 1 al 10. Posee los mismos permisos de creación y edición que un comentario.
 
+Sale: Ventas realizadas. Guarda todos los datos del usuario que realizo la compra y del auto que se vendio.
+
 ## Filtrado
 
 En la template del listado de autos tendremos acceso a un filtro de autos segun precio, categoria, marca, año del auto y si es usado o nuevo.
+
+## Listado de ventas
+
+Los usuarios staff tienen acceso a una lista con datos de todas las ventas de autos realizadas.
 
 ## Formularios
 
@@ -60,4 +67,4 @@ Se utilizan formularios localizados en archivos ``` form.py ``` para la creació
 * Creación y edición de comentarios
 * Creación y edición de reseñas
 * Filtrado de autos
-
+* Compra de autos
