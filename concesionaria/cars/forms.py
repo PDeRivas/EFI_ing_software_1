@@ -28,25 +28,31 @@ class ReviewForm(forms.ModelForm):
         }
 
 class FilterForm(forms.Form):
-    brand_choices = [('0', 'Todos')]
-    brands = Brand.objects.all()
-    for brand in brands:
-        brand_choices.append((brand.id, brand.name))
-
-    used_choices = [('2', 'Todos'),('0', 'Nuevo'),('1', 'Usado')]
-
-    category_choices = [('0', 'Todos')]
-    categorys = Category.objects.all()
-    for category in categorys:
-        category_choices.append((category.id, category.name))
-
     price_gte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Precio Desde'}))
     price_lte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Precio Hasta'}))
-    brand_id = forms.ChoiceField(choices=brand_choices, widget=forms.Select(attrs={'class': 'form-control'}))
-    used = forms.ChoiceField(choices=used_choices, widget=forms.Select(attrs={'class': 'form-control'}))
-    category_id = forms.ChoiceField(choices=category_choices, widget=forms.Select(attrs={'class': 'form-control'}))
+    brand_id = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control'}))
+    used = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control'}))
+    category_id = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control'}))
     year_gte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Año Desde'}))
     year_lte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Año Hasta'}))
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+        brand_choices = [('0', 'Todos')]
+        brands = Brand.objects.all()
+        for brand in brands:
+            brand_choices.append((brand.id, brand.name))
+        self.fields['brand_id'].choices = brand_choices
+
+        used_choices = [('2', 'Todos'), ('0', 'Nuevo'), ('1', 'Usado')]
+        self.fields['used'].choices = used_choices
+
+        category_choices = [('0', 'Todos')]
+        categories = Category.objects.all()
+        for category in categories:
+            category_choices.append((category.id, category.name))
+        self.fields['category_id'].choices = category_choices
 
 class SaleForm(forms.ModelForm):
     class Meta:
