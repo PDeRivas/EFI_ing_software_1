@@ -16,7 +16,7 @@ Sistema web para una concesionaria desarrollado con Django. Cuenta con sección 
 
 ## Instalación
 
-1. Clonaremos el repositorio ``` git clone git@github.com:PDeRivas/efi_ing_software_1.git ```
+1. Clonaremos el repositorio ``` git clone git@github.com:PDeRivas/efi_ing_software_1.git ``` e ingresamos a su carpeta `` cd efi_ing_software_1 ```
 2. Crearemos un entorno virtual ``` python3 -m venv venv ``` y lo corremos ``` source venv/bin/activate ```
 3. Instalaremos las librerias utilizadas ``` pip install -r requirements.txt ```
 
