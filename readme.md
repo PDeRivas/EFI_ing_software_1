@@ -16,28 +16,28 @@ Sistema web para una concesionaria desarrollado con Django. Cuenta con sección 
 
 ## Instalación
 
-1. Clonaremos el repositorio ``` git clone git@github.com:PDeRivas/efi_ing_software_1.git ```
-2. Crearemos un entorno virtual ``` python -m venv venv ``` y lo corremos ``` source venv/bin/activate ```
+1. Clonaremos el repositorio ``` git clone git@github.com:PDeRivas/efi_ing_software_1.git ``` e ingresamos a su carpeta `` cd efi_ing_software_1 ```
+2. Crearemos un entorno virtual ``` python3 -m venv venv ``` y lo corremos ``` source venv/bin/activate ```
 3. Instalaremos las librerias utilizadas ``` pip install -r requirements.txt ```
 
 ## Correr la aplicación
 
 1. Cuando nos encontremos en la carpeta principal del proyecto entraremos al directorio concesionaria ``` cd concesionaria ```
-2. Correremos las migraciones ``` python manage.py makemigrations ``` ``` python manage.py migrate ```
-3. Iniciaremos el proyecto ``` python manage.py runserver ```
+2. Correremos las migraciones ``` python3 manage.py makemigrations ``` ``` python3 manage.py migrate ```
+3. Iniciaremos el proyecto ``` python3 manage.py runserver ```
 4. Ir al navegador y entrar a [127.0.0.1:8000](http://127.0.0.1:8000/)
 
 ## Comandos
 
-Aparte de correr el proyecto tendremos acceso al comando cargar_datos, y le pasaremos como argumento vehiculos.csv ``` python manage.py cargar_datos vehiculos.csv ```. Este carga todos los vehiculos dentro del archivo, tambien creando todos los modelos asociados (Marcas, Categorias, Thumbnails, etc). Consigue imagenes de la carpeta cars_images para poner de thumbnail.
+Aparte de correr el proyecto tendremos acceso al comando cargar_datos, y le pasaremos como argumento vehiculos.csv ``` python3 manage.py cargar_datos vehiculos.csv ```. Este carga todos los vehiculos dentro del archivo, tambien creando todos los modelos asociados (Marcas, Categorias, Thumbnails, etc). Consigue imagenes de la carpeta cars_images para poner de thumbnail.
 
-Tambien podemos usar el comando borrar_autos ``` python manage.py borrar_autos ```. Este borra todos los autos cargados, pero no los otros modelos.
+Tambien podemos usar el comando borrar_autos ``` python3 manage.py borrar_autos ```. Este borra todos los autos cargados, pero no los otros modelos.
 
 ## Usuarios
 
 1. No logueado: Puede ver el listado de autos, filtrar y ver detalles, pero no dejar comentarios ni reseñas.
 2. Usuario no staff: Puede dejar comentarios y reseñas. Tambien puede editarlos y borrarlos siempre y cuando sea el creador. Para crear uno debemos entrar a iniciar sesión en la navbar del sitio y hacer click en "¿No tenes cuenta? Registrate aqui"
-3. Usuario staff: Puede cargar autos, imagenes, marcas, etc desde la sección para administradores [127.0.0.1:8000/admin](http://127.0.0.1:8000/admin). Tambien puede borrar comentarios y reseñas de otros usuarios. Para crear un usuario staff debemos correr el comando ``` python manage.py createsuperuser ``` por consola y llenar los campos que nos solicita.
+3. Usuario staff: Puede cargar autos, imagenes, marcas, etc desde la sección para administradores [127.0.0.1:8000/admin](http://127.0.0.1:8000/admin). Tambien puede borrar comentarios y reseñas de otros usuarios. Para crear un usuario staff debemos correr el comando ``` python3 manage.py createsuperuser ``` por consola y llenar los campos que nos solicita.
 
 ## Admin
 
