@@ -113,7 +113,7 @@
                 {% if comment.date_edit != None %}
                     <p>Editado: {{comment.time_edit}} {{comment.date_edit}}</p>
                 {% endif %}
-                {% if comment.author == user%}
+                {% if comment.author == user %}
                     <a class='btn btn-success' href="{% url 'comment_update' comment.id %}">Editar Comentario</a>
                 {% endif %}
                 {% if comment.author == user or user.is_staff %}

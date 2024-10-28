@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
 from cars.models import(
-    Nameplate
+    Traction
 )
 
-class NameplateSerializer(serializers.ModelSerializer):
+class TractionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Nameplate
+        model = Traction
         fields = ('name',)
