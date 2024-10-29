@@ -43,6 +43,7 @@ SELF_APPS = [
     'api',
     'cars',
     'home',
+    'users',
 ]
 
 EXTERNAL_APPS = [
