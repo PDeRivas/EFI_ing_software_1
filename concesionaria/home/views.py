@@ -9,8 +9,8 @@ from users.forms import UserLoginForm, UserRegisterForm
 class IndexView(View):
     def get(self, request):
         return render(
-        request,
-        'home/index.html'
+            request,
+            'home/index.html'
         )
     
 class LoginView(View):
