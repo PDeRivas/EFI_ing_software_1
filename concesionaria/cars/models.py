@@ -164,7 +164,7 @@ class Comment(models.Model):
     time_edit = models.TimeField(null=True)
 
     def __str__(self):
-        return f'Comentario de {self.author.username} sobre {self.car}'
+        return f'Comentario de {self.author.user.username} sobre {self.car}'
 
 #Solo puede dejarse una reseña por auto por usuario y debe dejarse una calificación del 1 al 10 sobre este
 class Review(models.Model):
@@ -182,7 +182,7 @@ class Review(models.Model):
     rating = models.IntegerField()
 
     def __str__(self):
-        return f'review de {self.author.username} sobre {self.car}. Rating de: {self.rating}'
+        return f'review de {self.author.user.username} sobre {self.car}. Rating de: {self.rating}'
 
 class Sale(models.Model):
     car = models.ForeignKey(

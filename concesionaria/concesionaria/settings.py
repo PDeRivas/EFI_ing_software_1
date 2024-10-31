@@ -43,6 +43,7 @@ SELF_APPS = [
     'api',
     'cars',
     'home',
+    'users',
 ]
 
 EXTERNAL_APPS = [
@@ -74,7 +75,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
                 'concesionaria.context_processors.all_car_names',
+                'concesionaria.context_processors.profile'
             ],
         },
     },
