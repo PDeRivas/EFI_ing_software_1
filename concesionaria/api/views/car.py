@@ -1,8 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
 
-from cars.models import Car
+from cars.repositories.car_repository import CarsRepository
 from api.serializers.car_serializer import CarSerializer
 
 class CarViewSet(ModelViewSet):
-    queryset = Car.objects.all()
+    repo = CarsRepository()
+    queryset = repo.get_all()
     serializer_class = CarSerializer

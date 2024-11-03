@@ -7,4 +7,4 @@ from cars.models import(
 class TractionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Traction
-        fields = ('name',)
+        fields = ('id', 'name',)

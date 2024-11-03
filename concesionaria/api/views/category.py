@@ -1,8 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
 
-from cars.models import Category
+from cars.repositories.car_components_repository import CategoryRepository
 from api.serializers.category_serializer import CategorySerializer
 
 class CategoryViewSet(ModelViewSet):
-    queryset = Category.objects.all()
+    repo = CategoryRepository()
+    queryset = repo.get_all()
     serializer_class = CategorySerializer

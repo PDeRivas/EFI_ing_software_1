@@ -5,9 +5,16 @@ from django.contrib.auth import (
     login,
     logout)
 from users.forms import UserLoginForm, UserRegisterForm
+from django.utils.translation import activate
+
+from users.models import Profile
 
 class IndexView(View):
     def get(self, request):
+        if not request.user.is_anonymous :
+            profile = Profile.objects.get(user = request.user)
+            lang = profile.language
+            activate(lang)
         return render(
             request,
             'home/index.html'
@@ -71,3 +78,15 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect('login')
+    
+class UpdateLang(View):
+    def get(self, request):
+        profile = Profile.objects.get(user = request.user)
+        lang = profile.language
+        if lang == 'es':
+            profile.language = 'en'
+        if lang == 'en':
+            profile.language = 'es'
+        profile.save()
+
+        return redirect(request.META.get('HTTP_REFERER', 'index'))

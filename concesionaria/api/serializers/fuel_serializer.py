@@ -7,4 +7,4 @@ from cars.models import(
 class FuelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fuel
-        fields = ('name',)
+        fields = ('id', 'name',)

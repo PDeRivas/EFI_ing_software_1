@@ -7,4 +7,4 @@ from cars.models import(
 class BrandSerializer(serializers.ModelSerializer):
     class Meta:
         model = Brand
-        fields = ('name',)
+        fields = ('id', 'name',)

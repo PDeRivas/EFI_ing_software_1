@@ -1,8 +1,10 @@
 from rest_framework.viewsets import ModelViewSet
 
-from cars.models import Nameplate
+from cars.repositories.car_components_repository import NameplateRepository
+
 from api.serializers.nameplate_serializer import NameplateSerializer
 
 class NameplateViewSet(ModelViewSet):
-    queryset = Nameplate.objects.all()
+    repo = NameplateRepository()
+    queryset = repo.get_all()
     serializer_class = NameplateSerializer

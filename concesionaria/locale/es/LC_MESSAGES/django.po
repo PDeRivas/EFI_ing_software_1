@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-03 16:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: .\concesionaria\settings.py:128
+msgid "Español"
+msgstr "Español"
+
+#: .\concesionaria\settings.py:129
+msgid "English"
+msgstr "Inglés"
+
+#: .\home\templates\home\base.html:7
+msgid "Concesionaria"
+msgstr "Concesionaria"
+
+#: .\home\templates\home\base.html:14
+msgid "Inicio"
+msgstr "Inicio"
+
+#: .\home\templates\home\base.html:15
+msgid "Lista de Autos"
+msgstr "Lista de Autos"
+
+#: .\home\templates\home\base.html:17
+msgid "Lista de Ventas"
+msgstr "Lista de Ventas"
+
+#: .\home\templates\home\base.html:23
+msgid "Salir"
+msgstr "Salir"
+
+#: .\home\templates\home\base.html:25
+msgid "Iniciar Sesión"
+msgstr "Iniciar Sesión"
+
+#: .\home\templates\home\index.html:12
+msgid "Bienvenido"
+msgstr "Bienvenido"
+
+#: .\home\templates\home\index.html:13
+msgid "En la concesionaria tenemos todo tipo de autos"
+msgstr "En la concesionaria tenemos todo tipo de autos"
+
+#: .\home\templates\home\index.html:13
+msgid "Seleccione una de las opciones arriba para seguir"
+msgstr "Seleccione una de las opciones arriba para seguir"

@@ -1,8 +1,10 @@
 from rest_framework.viewsets import ModelViewSet
 
-from cars.models import Transmission
+from cars.repositories.car_components_repository import TransmissionRepository
+
 from api.serializers.transmission_serializer import TransmissionSerializer
 
 class TransmissionViewSet(ModelViewSet):
-    queryset = Transmission.objects.all()
+    repo = TransmissionRepository()
+    queryset = repo.get_all()
     serializer_class = TransmissionSerializer

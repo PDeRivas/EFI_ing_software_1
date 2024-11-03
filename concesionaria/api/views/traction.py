@@ -1,8 +1,10 @@
 from rest_framework.viewsets import ModelViewSet
 
-from cars.models import Traction
+from cars.repositories.car_components_repository import TractionRepository
+
 from api.serializers.traction_serializer import TractionSerializer
 
 class TractionViewSet(ModelViewSet):
-    queryset = Traction.objects.all()
+    repo = TractionRepository()
+    queryset = repo.get_all()
     serializer_class = TractionSerializer

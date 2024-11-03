@@ -7,4 +7,4 @@ from cars.models import(
 class NameplateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Nameplate
-        fields = ('name',)
+        fields = ('id', 'name',)
