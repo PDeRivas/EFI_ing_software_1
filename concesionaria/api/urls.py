@@ -1,4 +1,6 @@
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken.views import obtain_auth_token
+from django.urls import path
 
 from api.views.car import CarViewSet
 from api.views.brand import BrandViewSet
@@ -22,4 +24,6 @@ router.register(r'transmission', TransmissionViewSet, 'Transmission')
 router.register(r'comments/(?P<carid>\d+)', CommentViewSet, 'comments')
 router.register(r'users', UserViewSet, 'users')
 
-urlpatterns = router.urls
+urlpatterns = router.urls + [
+    path('login_api', obtain_auth_token, name='login_api'),
+]

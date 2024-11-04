@@ -11,10 +11,6 @@ from users.models import Profile
 
 class IndexView(View):
     def get(self, request):
-        if not request.user.is_anonymous :
-            profile = Profile.objects.get(user = request.user)
-            lang = profile.language
-            activate(lang)
         return render(
             request,
             'home/index.html'

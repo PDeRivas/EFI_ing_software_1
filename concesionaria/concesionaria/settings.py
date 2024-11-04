@@ -51,9 +51,19 @@ SELF_APPS = [
 
 EXTERNAL_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + SELF_APPS + EXTERNAL_APPS
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,6 +73,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Middleware creado para cargar el lenguaje del usuario
+    "concesionaria.lang_middleware.UserLanguageMiddleware"
 ]
 
 ROOT_URLCONF = 'concesionaria.urls'
@@ -122,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
     ('es', _('Español')),
