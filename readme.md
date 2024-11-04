@@ -33,6 +33,86 @@ Aparte de correr el proyecto tendremos acceso al comando cargar_datos, y le pasa
 
 Tambien podemos usar el comando borrar_autos ``` python3 manage.py borrar_autos ```. Este borra todos los autos cargados, pero no los otros modelos.
 
+## Rutas de la API
+
+<details>
+  <summary>1. GET http://127.0.0.1:8000/api/cars/ Para obtener un listado completo de todos los autos creados en la base de datos.</summary>
+  
+   ### Devuelve los siguientes elementos de cada auto:
+  
+   id
+   
+   Year (año)
+   
+   Brand (marca) anidado del modelo marca.
+   
+   Category (categoría) anidado del modelo categoría.
+   
+   Country (país) anidado del modelo país.
+   
+   Fuel (combustible) anidado del modelo combustible.
+   
+   Nameplate (modelo) anidado del modelo "Modelo" (El nombre nameplate no significa exactamente modelo, pero usar el nombre Model crea problemas con la clase Model de Django).
+   
+   Traction (tracción) anidado del modelo tracción.
+   
+   Transmission (transmisión) anidado del modelo transmisión.
+   
+   Used (usado).
+   
+   Km (kilometros).
+   
+   Cylinders (cilindrado).
+   
+   Price (precio).
+   
+   Sold (vendido).
+</details>
+
+2. GET http://127.0.0.1:8000/api/brands/ Devuelve un listado de todas las marcas.
+
+3. GET http://127.0.0.1:8000/api/category/ Devuelve un listado de todas las categorias.
+
+4. GET http://127.0.0.1:8000/api/nameplates/ Devuelve un listado de todos los modelos de autos.
+
+5. GET http://127.0.0.1:8000/api/fuel/ Devuelve un listado de todos los tipos de combustible.
+
+6. GET http://127.0.0.1:8000/api/traction/ Devuelve un listado de todos los tipos de tracción.
+
+7. GET http://127.0.0.1:8000/api/transmission/ Devuelve un listado de todos los tipos de transmisión.
+
+<details>
+
+<summary>8. POST http://127.0.0.1:8000/api/login_api/ Para recibir el token de usuario para usar desde un administrador de API externo.</summary>
+
+  Necesitamos enviar los siguientes datos:
+  
+  "username" Nombre de usuario
+
+  "password" Contraseña
+
+  Nos devuelve un token, para usarlo en los sitios que necesite autenticación enviaremos:
+
+  Header ``` Authorization ``` valor ``` Token [nuestro token] ```
+</details>
+  
+<details>
+
+<summary>9. GET http://127.0.0.1:8000/api/users/ Devuelve un listado de todos los usuarios.</summary>
+
+Necesitamos habernos logeado en la sesión actual en el navegador o enviar el Token de usuario en la API. Tambien podemos crear usuarios mediante el método POST:
+
+  1. "username" Nombre del usuario a crear. No puede repetirse con uno ya existente.
+  
+  2. "password": Contraseña del nuevo usuario.
+  
+  3. "first_name" Nombre
+
+  4. "last_name" Apellido
+
+  5. "email" Mail del nuevo usuario. Tampoco puede repetirse. 
+</details>
+
 ## Usuarios
 
 1. No logueado: Puede ver el listado de autos, filtrar y ver detalles, pero no dejar comentarios ni reseñas.
