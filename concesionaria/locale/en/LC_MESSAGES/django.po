@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 16:15-0300\n"
+"POT-Creation-Date: 2024-11-04 12:14-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,35 +18,141 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\concesionaria\settings.py:128
+#: .\cars\forms.py:15
+msgid "Deja tu comentario"
+msgstr "Leave a comment"
+
+#: .\cars\templates\car\detail.html:31
+msgid "Comprar"
+msgstr "Buy"
+
+#: .\cars\templates\car\detail.html:34
+msgid "Detalles"
+msgstr "Details"
+
+#: .\cars\templates\car\detail.html:37
+msgid "Año"
+msgstr "Year"
+
+#: .\cars\templates\car\detail.html:41
+msgid "Cantidad de Puertas"
+msgstr "Number of doors"
+
+#: .\cars\templates\car\detail.html:45
+msgid "Estado"
+msgstr "Status"
+
+#: .\cars\templates\car\detail.html:47
+msgid "Usado"
+msgstr "Used"
+
+#: .\cars\templates\car\detail.html:49
+msgid "Nuevo"
+msgstr "New"
+
+#: .\cars\templates\car\detail.html:56
+msgid "Distancia recorrida"
+msgstr "Distance used"
+
+#: .\cars\templates\car\detail.html:61
+msgid "Cilindrado"
+msgstr "Cylinders"
+
+#: .\cars\templates\car\detail.html:65
+msgid "Precio"
+msgstr "Price"
+
+#: .\cars\templates\car\detail.html:71
+msgid "País"
+msgstr "Country"
+
+#: .\cars\templates\car\detail.html:75
+msgid "Marca"
+msgstr "Brand"
+
+#: .\cars\templates\car\detail.html:79
+msgid "Modelo"
+msgstr "Nameplate"
+
+#: .\cars\templates\car\detail.html:85
+#, fuzzy
+#| msgid "Lista de Autos"
+msgid "Tipo de Auto"
+msgstr "Car list"
+
+#: .\cars\templates\car\detail.html:89
+msgid "Tipo de Combustible"
+msgstr "Fuel"
+
+#: .\cars\templates\car\detail.html:93
+msgid "Tipo de Tracción"
+msgstr "Traction"
+
+#: .\cars\templates\car\detail.html:98
+msgid "Tipo de Transmisión"
+msgstr "Transmission"
+
+#: .\cars\templates\car\detail.html:104
+msgid "Comentarios"
+msgstr "Comments"
+
+#: .\cars\templates\car\detail.html:108
+msgid "Commentar"
+msgstr "Comment"
+
+#: .\cars\templates\car\detail.html:116 .\cars\templates\car\detail.html:135
+msgid "Editado"
+msgstr "Edited"
+
+#: .\cars\templates\car\detail.html:119
+msgid "Editar Comentario"
+msgstr "Edit Comment"
+
+#: .\cars\templates\car\detail.html:122
+msgid "Borrar Comentario"
+msgstr "Delete Comment"
+
+#: .\cars\templates\car\detail.html:127
+msgid "Reseñas"
+msgstr "Reviews"
+
+#: .\cars\templates\car\detail.html:138
+msgid "Editar reseña"
+msgstr "Edit Review"
+
+#: .\cars\templates\car\detail.html:142
+msgid "Deja tu reseña"
+msgstr "Leave a Review"
+
+#: .\concesionaria\settings.py:141
 msgid "Español"
 msgstr "Spanish"
 
-#: .\concesionaria\settings.py:129
+#: .\concesionaria\settings.py:142
 msgid "English"
 msgstr "English"
 
-#: .\home\templates\home\base.html:7
+#: .\home\templates\home\base.html:8
 msgid "Concesionaria"
 msgstr "Dealership"
 
-#: .\home\templates\home\base.html:14
+#: .\home\templates\home\base.html:15
 msgid "Inicio"
 msgstr "Home"
 
-#: .\home\templates\home\base.html:15
+#: .\home\templates\home\base.html:16
 msgid "Lista de Autos"
 msgstr "Car list"
 
-#: .\home\templates\home\base.html:17
+#: .\home\templates\home\base.html:18
 msgid "Lista de Ventas"
 msgstr "Sales List"
 
-#: .\home\templates\home\base.html:23
+#: .\home\templates\home\base.html:24
 msgid "Salir"
 msgstr "Log Out"
 
-#: .\home\templates\home\base.html:25
+#: .\home\templates\home\base.html:26
 msgid "Iniciar Sesión"
 msgstr "Log In"
 

@@ -3,6 +3,7 @@ from cars.models import Comment, Review, Car, Sale
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from cars.models import Brand, Category
+from django.utils.translation import gettext_lazy as _
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -11,7 +12,7 @@ class CommentForm(forms.ModelForm):
             'text',
         ]
         widgets = {
-            'text': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Deja tu comentario',}),
+            'text': forms.Textarea(attrs={'class':'form-control', 'placeholder': _('Deja tu comentario'),}),
         }
 
 class ReviewForm(forms.ModelForm):

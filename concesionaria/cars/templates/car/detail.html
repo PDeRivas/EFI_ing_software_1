@@ -1,6 +1,8 @@
 {% extends "home/base.html" %}
-
 {% block content %}
+
+{% load i18n %}
+
     <h2>{{car}}</h2>
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
@@ -26,84 +28,84 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col">
-                    <a href="{% url 'sale_create' car.id %}" class="btn btn-success">Comprar</a>
+                    <a href="{% url 'sale_create' car.id %}" class="btn btn-success">{% trans "Comprar" %}</a>
                 </div>
             </div>
-            <h3>Detalles</h3>
+            <h3>{% trans "Detalles" %}</h3>
             <div class="row">
                 <div class='col'>
-                    <h4>Año</h4>
+                    <h4>{% trans "Año" %}</h4>
                     <p>{{car.year}}</p>
                 </div>
                 <div class='col'>
-                    <h4>Cantidad de Puertas</h4>
+                    <h4>{% trans "Cantidad de Puertas" %}</h4>
                     <p>{{car.doors}}</p>
                 </div>
                 <div class='col'>
-                    <h4>Estado</h4>
+                    <h4>{% trans "Estado" %}</h4>
                     {% if car.used %} 
-                        <p>Usado</p>
+                        <p>{% trans "Usado" %}</p>
                     {% else %}
-                        <p>Nuevo</p>
+                        <p>{% trans "Nuevo" %}</p>
                     {% endif %}
                 </div>
             </div>
             <div class="row">
                 {% if car.used %}
                     <div class="col">
-                        <h4>Distancia recorrida</h4>
-                        <p>{{car.km}} Kilometros</p>
+                        <h4>{% trans "Distancia recorrida" %}</h4>
+                        <p>{{car.km}} Km</p>
                     </div>
                 {% endif %}
                 <div class="col">
-                    <h4>Cilindrado</h4>
+                    <h4>{% trans "Cilindrado" %}</h4>
                     <p>{{car.cylinders}}</p>
                 </div>
                 <div class="col">
-                    <h4>Precio</h4>
-                    <p>${{car.price}} Dolares</p>
+                    <h4>{% trans "Precio" %}</h4>
+                    <p>${{car.price}}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <h4>País de Origen</h4>
+                    <h4>{% trans "País" %}</h4>
                     <p>{{car.country}}</p>
                 </div>
                 <div class="col">
-                    <h4>Marca</h4>
+                    <h4>{% trans "Marca" %}</h4>
                     <p>{{car.brand}}</p>
                 </div>
                 <div class="col">
-                    <h4>Modelo</h4>
+                    <h4>{% trans "Modelo" %}</h4>
                     <p>{{car.nameplate}}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <h4>Tipo de Auto</h4>
+                    <h4>{% trans "Tipo de Auto" %}</h4>
                     <p>{{car.category}}</p>
                 </div>
                 <div class="col">
-                    <h4>Tipo de Combustible</h4>
+                    <h4>{% trans "Tipo de Combustible" %}</h4>
                     <p>{{car.fuel}}</p>
                 </div>
                 <div class="col">
-                    <h4>Tipo de Tracción</h4>
+                    <h4>{% trans "Tipo de Tracción" %}</h4>
                     <p>{{car.traction}}</p>
                 </div>
             </div>
             <div class="col">
-                <h4>Tipo de Transmisión</h4>
+                <h4>{% trans "Tipo de Transmisión" %}</h4>
                 <p>{{car.transmission}}</p>
             </div>
         </div>
     </div>
     <div>
-        <h3>Comentarios</h3>
+        <h3>{% trans "Comentarios" %}</h3>
         <form class="d-flex" method="post">
             {% csrf_token %}
             {{ form.text }}
-            <button class='btn btn-success' name="comment">Commentar</button>
+            <button class='btn btn-success' name="comment">{% trans "Commentar" %}</button>
         </form>
         {% for comment in comments %}
             <div class="border border-dark mt-2 p-2 rounded">
@@ -111,18 +113,18 @@
                 <p>{{comment.text}}</p>
                 <p>{{comment.date}} {{comment.time}}</p>
                 {% if comment.date_edit != None %}
-                    <p>Editado: {{comment.time_edit}} {{comment.date_edit}}</p>
+                    <p>{% trans "Editado" %}: {{comment.time_edit}} {{comment.date_edit}}</p>
                 {% endif %}
                 {% if comment.author == user %}
-                    <a class='btn btn-success' href="{% url 'comment_update' comment.id %}">Editar Comentario</a>
+                    <a class='btn btn-success' href="{% url 'comment_update' comment.id %}">{% trans "Editar Comentario" %}</a>
                 {% endif %}
                 {% if comment.author == user or user.is_staff %}
-                    <a class='btn btn-danger' href="{% url 'comment_delete' comment.id %}">Borrar Comentario</a>
+                    <a class='btn btn-danger' href="{% url 'comment_delete' comment.id %}">{% trans "Borrar Comentario" %}</a>
                 {% endif %}
             </div>
         {% endfor %}
     </div>
-    <h3>Reseñas</h3>
+    <h3>{% trans "Reseñas" %}</h3>
     {% for review in reviews %}
         <div class="border border-dark mt-2 p-2 rounded">
             <h4>{{review.author}}</h4>
@@ -130,12 +132,12 @@
             <p>{{review.rating}}/10</p>
             <p>{{review.time}} {{review.date}}</p>
             {% if review.date_edit != None %}
-                <p>Editado: {{review.time_edit}} {{review.date_edit}}</p>
+                <p>{% trans "Editado" %}: {{review.time_edit}} {{review.date_edit}}</p>
             {% endif %}
             {% if review.author == user %}
-                <a class='btn btn-success' href="{% url 'review_update' review.id %}">Editar reseña</a>
+                <a class='btn btn-success' href="{% url 'review_update' review.id %}">{% trans "Editar reseña" %}</a>
             {% endif %}
         </div>
     {% endfor %}
-    <a class='btn btn-success my-4' href="{% url 'review_create' car.id %}">Deja tu reseña</a>
+    <a class='btn btn-success my-4' href="{% url 'review_create' car.id %}">{% trans "Deja tu reseña" %}</a>
 {% endblock %}
