@@ -1,36 +1,38 @@
 {% extends "home/base.html" %}
-
 {% block content %}
+
+{% load i18n %}
+
     <div class="text-center">
-        <h2>Listado de Autos</h2>
+        <h2>{% trans "Lista de Autos" %}</h2>
     </div>
     <form method="post" class="container text-center">
         {% csrf_token %}
         <div class="row my-2">
             <div class="col">
-                <label>Intervalo de Precios</label>
+                <label>{% trans "Intervalo de Precios" %}</label>
                 {{ form.price_gte }}
                 {{ form.price_lte }}
             </div>
             <div class="col">
-                <label>Marca</label>
+                <label>{% trans "Marca" %}</label>
                 {{ form.brand_id }}
             </div>
             <div class="col">
-                <label>Usado</label>
+                <label>{% trans "Usado" %}</label>
                 {{ form.used }}
             </div>
             <div class="col">
-                <label>Categoria</label>
+                <label>{% trans "Categoria" %}</label>
                 {{ form.category_id }}
             </div>
             <div class="col">
-                <label>Años</label>
+                <label>{% trans "Años" %}</label>
                 {{ form.year_gte }}
                 {{ form.year_lte }}
             </div>
             <div class="col">
-                <button type="submit" class="btn btn-primary ">Filtrar</button>
+                <button type="submit" class="btn btn-primary ">{% trans "Filtrar" %}</button>
             </div>
         </div>
     </form>
@@ -43,11 +45,11 @@
                         <h5 class="card-title">{{car}}</h5>
                         <p>${{ car.price }}</p>
                         {% if car.used %} 
-                            <p class="card-text">Usado</p>
+                            <p class="card-text">{% trans "Usado" %}</p>
                         {% else %}
-                            <p class="card-text">Nuevo</p>
+                            <p class="card-text">{% trans "Nuevo" %}</p>
                         {% endif %}
-                        <a href="{% url 'car_detail' car.id %}" class="btn btn-info btn-sm">Detalles</a>
+                        <a href="{% url 'car_detail' car.id %}" class="btn btn-info btn-sm">{% trans "Detalles" %}</a>
                     </div>
                 </div>
             </div>

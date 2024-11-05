@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 12:14-0300\n"
+"POT-Creation-Date: 2024-11-05 11:08-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,11 +23,41 @@ msgstr ""
 msgid "Deja tu comentario"
 msgstr "Deja tu comentario"
 
+#: .\cars\forms.py:32
+msgid "Precio Desde"
+msgstr "Precio Desde"
+
+#: .\cars\forms.py:33
+msgid "Precio Hasta"
+msgstr "Precio Hasta"
+
+#: .\cars\forms.py:37
+msgid "Año Desde"
+msgstr "Año Desde"
+
+#: .\cars\forms.py:38
+msgid "Año Hasta"
+msgstr "Año Hasta"
+
+#: .\cars\forms.py:43 .\cars\forms.py:49 .\cars\forms.py:52
+msgid "Todos"
+msgstr "Todos"
+
+#: .\cars\forms.py:49 .\cars\templates\car\detail.html:49
+#: .\cars\templates\car\list.html:50
+msgid "Nuevo"
+msgstr "Nuevo"
+
+#: .\cars\forms.py:49 .\cars\templates\car\detail.html:47
+#: .\cars\templates\car\list.html:22 .\cars\templates\car\list.html:48
+msgid "Usado"
+msgstr "Usado"
+
 #: .\cars\templates\car\detail.html:31
 msgid "Comprar"
 msgstr "Comprar"
 
-#: .\cars\templates\car\detail.html:34
+#: .\cars\templates\car\detail.html:34 .\cars\templates\car\list.html:52
 msgid "Detalles"
 msgstr "Detalles"
 
@@ -42,14 +72,6 @@ msgstr "Cantidad de Puertas"
 #: .\cars\templates\car\detail.html:45
 msgid "Estado"
 msgstr "Estado"
-
-#: .\cars\templates\car\detail.html:47
-msgid "Usado"
-msgstr "Usado"
-
-#: .\cars\templates\car\detail.html:49
-msgid "Nuevo"
-msgstr "Nuevo"
 
 #: .\cars\templates\car\detail.html:56
 msgid "Distancia recorrida"
@@ -67,7 +89,7 @@ msgstr "Precio"
 msgid "País"
 msgstr "País"
 
-#: .\cars\templates\car\detail.html:75
+#: .\cars\templates\car\detail.html:75 .\cars\templates\car\list.html:18
 msgid "Marca"
 msgstr "Marca"
 
@@ -125,11 +147,31 @@ msgstr "Editar reseña"
 msgid "Deja tu reseña"
 msgstr "Deja tu reseña"
 
-#: .\concesionaria\settings.py:141
+#: .\cars\templates\car\list.html:7 .\home\templates\home\base.html:16
+msgid "Lista de Autos"
+msgstr "Lista de Autos"
+
+#: .\cars\templates\car\list.html:13
+msgid "Intervalo de Precios"
+msgstr "Intervalo de Precios"
+
+#: .\cars\templates\car\list.html:26
+msgid "Categoria"
+msgstr "Categoría"
+
+#: .\cars\templates\car\list.html:30
+msgid "Años"
+msgstr "Años"
+
+#: .\cars\templates\car\list.html:35
+msgid "Filtrar"
+msgstr "Filtrar"
+
+#: .\concesionaria\settings.py:142
 msgid "Español"
 msgstr "Español"
 
-#: .\concesionaria\settings.py:142
+#: .\concesionaria\settings.py:143
 msgid "English"
 msgstr "Inglés"
 
@@ -140,10 +182,6 @@ msgstr "Concesionaria"
 #: .\home\templates\home\base.html:15
 msgid "Inicio"
 msgstr "Inicio"
-
-#: .\home\templates\home\base.html:16
-msgid "Lista de Autos"
-msgstr "Lista de Autos"
 
 #: .\home\templates\home\base.html:18
 msgid "Lista de Ventas"

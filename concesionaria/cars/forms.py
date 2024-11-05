@@ -29,27 +29,27 @@ class ReviewForm(forms.ModelForm):
         }
 
 class FilterForm(forms.Form):
-    price_gte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Precio Desde'}))
-    price_lte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Precio Hasta'}))
+    price_gte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':_('Precio Desde')}))
+    price_lte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':_('Precio Hasta')}))
     brand_id = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control'}))
     used = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control'}))
     category_id = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control'}))
-    year_gte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Año Desde'}))
-    year_lte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Año Hasta'}))
+    year_gte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':_('Año Desde')}))
+    year_lte = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class':'form-control', 'placeholder':_('Año Hasta')}))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
-        brand_choices = [('0', 'Todos')]
+        brand_choices = [('0', _('Todos'))]
         brands = Brand.objects.all()
         for brand in brands:
             brand_choices.append((brand.id, brand.name))
         self.fields['brand_id'].choices = brand_choices
 
-        used_choices = [('2', 'Todos'), ('0', 'Nuevo'), ('1', 'Usado')]
+        used_choices = [('2', _('Todos')), ('0', _('Nuevo')), ('1', _('Usado'))]
         self.fields['used'].choices = used_choices
 
-        category_choices = [('0', 'Todos')]
+        category_choices = [('0', _('Todos'))]
         categories = Category.objects.all()
         for category in categories:
             category_choices.append((category.id, category.name))
