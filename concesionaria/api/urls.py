@@ -25,5 +25,5 @@ router.register(r'comments/(?P<carid>\d+)', CommentViewSet, 'comments')
 router.register(r'users', UserViewSet, 'users')
 
 urlpatterns = router.urls + [
-    path('login_api', obtain_auth_token, name='login_api'),
+    path('login_api/', obtain_auth_token, name='login_api'),
 ]
