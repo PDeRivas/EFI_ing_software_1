@@ -1,6 +1,6 @@
 # Ingeniería de Software
 
-Evaluación Final Integradora 2024 Parte I
+Evaluación Final Integradora 2024
 
 Integrantes:
 
@@ -112,6 +112,8 @@ Necesitamos habernos logeado en la sesión actual en el navegador o enviar el To
 
   5. "email" Mail del nuevo usuario. Tampoco puede repetirse. 
 </details>
+
+10. GET http://127.0.0.1:8000/api/comments/<carid> Devuelve un listado de comentarios sobre el auto cuya id pasemos
 
 ## Usuarios
 
