@@ -1,6 +1,6 @@
 # Ingeniería de Software
 
-Evaluación Final Integradora 2024 Parte I
+Evaluación Final Integradora 2024
 
 Integrantes:
 
